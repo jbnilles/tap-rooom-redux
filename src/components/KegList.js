@@ -13,7 +13,7 @@ function KegList(props) {
           whenKegClicked = {props.onKegSelection}
           Name={keg.Name}
           Brand={keg.Brand}
-          AlcoholContent={keg.AlcoholContnet}
+          AlcoholContent={keg.AlcoholContent}
           Quantity={keg.Quantity}
           Price={keg.Price}
           id={keg.id}

@@ -10,7 +10,10 @@ function Keg(props) {
   return (
     <React.Fragment>
       <div onClick = {() => props.whenKegClicked(props.id)}>
-        <li>{props.Name} : {quantity}</li>
+        <li>
+          <h3>{props.Brand} : {props.Name}</h3>
+          <h5>{quantity} Pints Remaining | {props.AlcoholContent}% | ${props.Price}</h5>
+        </li>
       </div>
     </React.Fragment>
   );
@@ -18,8 +21,10 @@ function Keg(props) {
 
 Keg.propTypes = {
   Name: PropTypes.string.isRequired,
-  // Description: PropTypes.string,
+  Brand: PropTypes.string.isRequired,
   Quantity: PropTypes.number.isRequired,
+  AlcoholContent: PropTypes.number.isRequired,
+  Price: PropTypes.number.isRequired,
   id: PropTypes.string,
   whenKegClicked: PropTypes.func
 };

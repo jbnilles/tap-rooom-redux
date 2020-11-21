@@ -22,9 +22,11 @@ function DetailsKeg(props){
   return (
     <React.Fragment>
       <h1>Keg Detail</h1>
-      <h3>Name: {keg.Name}<br />
-      Brand: {keg.Brand}<br />
-      Quantity: {quantity}</h3>
+      <h3>Name: {keg.Name}</h3>
+      <h3>Brand: {keg.Brand}</h3>
+      <h3>Quantity: {quantity}</h3>
+      <h5>Price: {keg.Price}</h5>
+      <h5>Alcohol Percent: {keg.AlcoholContent}</h5>
       <button onClick = {()=> handleChangeKegQuantityButton(keg, true, 1) }>Buy</button> {/* reduce quantity */}
       {/*<button onClick = {()=> handleChangekegQuantityButton(keg, false, 10)  }>Stock</button>  increase quantity props.onStockClick*/}
       <button onClick = { props.onClickingEdit }>Update Keg</button>
