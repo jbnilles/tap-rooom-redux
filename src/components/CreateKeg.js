@@ -5,9 +5,9 @@ import {v4} from 'uuid'
 
 function CreateKeg(props) {
 
-  function handleNewItemFormSubmission(event) {
+  function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewItemCreation({
+    props.onNewKegCreation({
           
       Brand: event.target.Brand.value, 
       AlcoholContent: event.target.AlcoholContent.value, 
@@ -21,7 +21,7 @@ function CreateKeg(props) {
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler = {handleNewKegFormSubmission}
-        buttonText = "Add Item" />
+        buttonText = "Add Keg" />
     </React.Fragment>
   )
 };
