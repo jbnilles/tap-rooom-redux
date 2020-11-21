@@ -14,7 +14,7 @@ function CreateKeg(props) {
       AlcoholContent: event.target.AlcoholContent.value, 
       Price: event.target.Price.value, 
       Name: event.target.Name.value, 
-      Quantity: 184,//event.target.Quantity.value === "" || event.target.Quantity.value < 0 ? 0 : event.target.Quantity.value, 
+      Quantity: 124,//event.target.Quantity.value === "" || event.target.Quantity.value < 0 ? 0 : event.target.Quantity.value, //
       id:v4()});
   }
 
@@ -22,6 +22,7 @@ function CreateKeg(props) {
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler = {handleNewKegFormSubmission}
+        isNew = {true}
         buttonText = "Add Keg" />
     </React.Fragment>
   )

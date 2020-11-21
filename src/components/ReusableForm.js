@@ -18,15 +18,30 @@ function ReusableForm(props) {
           defaultValue={props.Brand ? props.Brand : ""}
           placeholder='Enter a Brand' />
           <input
-          type='text'
+          type='number'
+          min='0'
+          step='.25'
           name='Price'
           defaultValue={props.Price ? props.Price : ""}
           placeholder='Enter a Price' />
           <input
-          type='text'
+          type='number'
+          min='0'
+          max='100'
+          step='.01'
           name='AlcoholContent'
           defaultValue={props.AlcoholContent ? props.AlcoholContent : ""}
-          placeholder='Enter a AlcoholContent' />
+          placeholder='Alcohol %' />
+          {!props.isNew ? 
+          
+          <input
+          type='number'
+          name='Quantity'
+          defaultValue={props.Quantity ? props.Quantity : ""}
+          placeholder='Enter a Quantity' /> : ""}
+            
+          
+          
           <button type ='submit'>Submit</button>
           <br />
        
