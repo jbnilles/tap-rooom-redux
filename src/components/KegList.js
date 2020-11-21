@@ -8,7 +8,7 @@ function KegList(props) {
   return (
   <React.Fragment>
     <ul>
-      {props.masterList.map((keg) => 
+      {props.Kegs.map((keg) => 
         <Keg
           Name={keg.Name}
           Brand={keg.Brand}

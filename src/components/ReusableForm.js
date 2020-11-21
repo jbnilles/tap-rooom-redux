@@ -27,7 +27,7 @@ function ReusableForm(props) {
           name='AlcoholContent'
           defaultValue={props.AlcoholContent ? props.AlcoholContent : ""}
           placeholder='Enter a AlcoholContent' />
-          
+          <button type ='submit'>Submit</button>
           <br />
        
       </form>

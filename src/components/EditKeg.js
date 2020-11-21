@@ -13,23 +13,23 @@ function EditKegForm (props) {
       Price: event.target.Price.value, 
       Name: event.target.Name.value, 
       Quantity: event.target.Quantity.value === "" || event.target.Quantity.value < 0 ? 0 : event.target.Quantity.value, 
-      id: item.id});
+      id: keg.id});
   }
   return (
     <React.Fragment>
       <ReusableForm
-        Name={item.Name} 
-        Price={item.Price} 
-        AlcoholContent={item.AlcoholContent} 
-        Quantity={item.Quantity}
+        Name={keg.Name} 
+        Price={keg.Price} 
+        AlcoholContent={keg.AlcoholContent} 
+        Quantity={keg.Quantity}
         formSubmissionHandler = {handleEditKegFormSubmission}
         buttonText="Update Keg" />
     </React.Fragment>
   );
 }
 
-EditItemForm.propTypes = {
-  onEditItem: PropTypes.func
+EditKegForm.propTypes = {
+  onEditKeg: PropTypes.func
 };
 
-export default EditItemForm;
+export default EditKegForm;
