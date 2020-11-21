@@ -4,19 +4,23 @@ import Keg from './Keg'
 
 function KegList(props) {
 
+
+  return (
   <React.Fragment>
-    {props.masterList.map((keg) => 
-    <li>
-      <Keg
-        Name={keg.Name}
-        Brand={keg.Brand}
-        AlcoholContent={keg.AlcoholContnet}
-        Price={keg.Price}
-        id={keg.id}
-        key={keg.id}
-      />
-    </li>)}
-  </React.Fragment>
+    <ul>
+      {props.masterList.map((keg) => 
+        <Keg
+          Name={keg.Name}
+          Brand={keg.Brand}
+          AlcoholContent={keg.AlcoholContnet}
+          Quantity={keg.Quantity}
+          Price={keg.Price}
+          id={keg.id}
+          key={keg.id}
+        />
+      )}
+    </ul>
+  </React.Fragment>)
 }
 
 Keg.propTypes = {

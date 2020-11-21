@@ -1,25 +1,23 @@
-import logo from '../logo.svg';
-import React from 'react'
-import '../App.css';
+import React from "react";
+// import Header from "./Header";
+// import Footer from "./Footer";
+import KegController from "./KegController";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div class="contain">
+        <div id="header">
+          {/* <Header /> */}
+        </div>
+        <div id="body">
+          <KegController />
+        </div>
+        <div id="footer">
+          {/* <Footer /> */}
+        </div>
+      </div>
+    </React.Fragment>
   );
 }
 
