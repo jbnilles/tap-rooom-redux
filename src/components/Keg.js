@@ -10,6 +10,7 @@ function Keg(props) {
   const styleComponent = {
       color : props.Quantity > 50 ? "green" : props.Quantity > 10 ? "orange" : "red"
     }
+    
   return (
     
     <React.Fragment>

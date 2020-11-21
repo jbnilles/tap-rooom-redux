@@ -4,10 +4,13 @@ import Keg from './Keg'
 
 function KegList(props) {
 
+const styleObj = {
 
+  borderStyle: props.Kegs.length > 0 ? 'solid' : 'none'
+}
   return (
   <React.Fragment>
-    <ul>
+    <ul style = {styleObj}>
       {props.Kegs.map((keg) => 
         <Keg
           whenKegClicked = {props.onKegSelection}

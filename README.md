@@ -65,7 +65,7 @@
 ### To Do
 
 
-
+ 
 - [x] list/menu of all available kegs
 - [x] form to add a new keg to a list.
 - [x] click on a keg to see its detail page.
