@@ -13,7 +13,7 @@
 ## Table of contents
 
 
-> * [Tap Room](#tap room)
+> * [Tap Room](#tap-room)
 >   * [About / Synopsis](#about--synopsis)
 >   * [Table of contents](#table-of-contents)
 >   * [Setup](#setup)
@@ -76,7 +76,7 @@
 - [x] delete a keg.
 - [x] say "Out of Stock" once it's empty.
 - [x] less than 10 pints to include a message that says "Almost Empty" 
-- [ ] have kegs prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of pints left.
+- [x] have kegs prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of pints left.
 - [ ] application to be nicely styled. (Use stylesheets and CSS objects!)
 
 ## Resources (Documentation and other links)
