@@ -29,9 +29,8 @@ function DetailsKeg(props){
       <h5>Price: {keg.Price}</h5>
       <h5>Alcohol Percent: {keg.AlcoholContent}</h5>
       <button onClick = {()=> handleChangeKegQuantityButton(keg, true, 1) }>Buy</button> 
-      <button onClick = { props.onClickingEdit }>Update Keg</button>
-      <button onClick = {() => onClickingDelete(keg.id) }>Close Keg</button>
-      <hr/>
+      <button onClick = { props.onClickingEdit }>Edit Keg</button>
+      <button onClick = {() => onClickingDelete(keg.id) }>Remove Keg</button>
     </React.Fragment>
   );
 }
