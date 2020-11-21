@@ -6,14 +6,18 @@ function Keg(props) {
   if(parseInt(quantity) === 0) {
     quantity = 'Out Of Stock';
   }
-  
+
+  const styleComponent = {
+      color : props.Quantity > 50 ? "green" : props.Quantity > 10 ? "orange" : "red"
+    }
   return (
+    
     <React.Fragment>
       <div onClick = {() => props.whenKegClicked(props.id)}>
         <li>
           <h3>{props.Brand} : {props.Name}</h3>
           <h4>{quantity <=10 ? "Almost Empty" : ""}</h4>
-          <h5>{quantity} Pints Remaining  | {props.AlcoholContent}% | ${props.Price}</h5>
+          <h5>{quantity} Pints Remaining  | {props.AlcoholContent}% | <span style = {styleComponent}>${props.Price}</span></h5>
         </li>
       </div>
     </React.Fragment>
