@@ -1,9 +1,15 @@
 import React from 'react';
 
 function Header () {
+  const myStyledComponentStyles = {
+    textAlign: 'center',
+  }
   return (
     <React.Fragment>
-      <h2>The Tap Room</h2>
+      <div style ={myStyledComponentStyles}>
+        <h2>The Tap Room</h2>
+      </div>
+      
 
     </React.Fragment>
   );

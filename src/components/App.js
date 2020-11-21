@@ -6,17 +6,9 @@ import KegController from "./KegController";
 function App() {
   return (
     <React.Fragment>
-      <div className="container">
-        <div id="header">
-          <Header />
-        </div>
-        <div id="body">
-          <KegController />
-        </div>
-        <div id="footer">
-          <Footer />
-        </div>
-      </div>
+      <Header />
+      <KegController />
+      <Footer />
     </React.Fragment>
   );
 }
