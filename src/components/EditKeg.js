@@ -20,6 +20,7 @@ function EditKegForm (props) {
       <ReusableForm
         Name={keg.Name} 
         Price={keg.Price} 
+        Brand={keg.Brand} 
         AlcoholContent={keg.AlcoholContent} 
         Quantity={keg.Quantity}
         formSubmissionHandler = {handleEditKegFormSubmission}

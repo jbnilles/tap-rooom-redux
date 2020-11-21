@@ -25,7 +25,7 @@ class KegController extends React.Component{
     this.setState({
       masterList: editedKegList,
       editing: false,
-      selectedKeg: null
+      selectedKeg: kegToEdit
     });
   }
   handleEditClick = () => { // sets kegs to edit

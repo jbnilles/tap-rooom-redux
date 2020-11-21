@@ -24,6 +24,7 @@ function DetailsKeg(props){
       <h1>Keg Detail</h1>
       <h3>Name: {keg.Name}</h3>
       <h3>Brand: {keg.Brand}</h3>
+      <h2>{quantity <=10 ? "Almost Empty" : ""}</h2>
       <h3>Quantity: {quantity}</h3>
       <h5>Price: {keg.Price}</h5>
       <h5>Alcohol Percent: {keg.AlcoholContent}</h5>
