@@ -7,13 +7,14 @@ function CreateKeg(props) {
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
+   
     props.onNewKegCreation({
           
       Brand: event.target.Brand.value, 
       AlcoholContent: event.target.AlcoholContent.value, 
       Price: event.target.Price.value, 
       Name: event.target.Name.value, 
-      Quantity: event.target.Quantity.value === "" || event.target.Quantity.value < 0 ? 0 : event.target.Quantity.value, 
+      Quantity: 184,//event.target.Quantity.value === "" || event.target.Quantity.value < 0 ? 0 : event.target.Quantity.value, 
       id:v4()});
   }
 
