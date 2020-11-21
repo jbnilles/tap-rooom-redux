@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Tap Room
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About / Synopsis
 
-In the project directory, you can run:
+* This Project tracks kegs, maintaining a count of how many pints left, price, brand, alcohol percent and name
+* This project was created following Epicodus' React Fundamentals Independent Project requirments.
+* Project status: working
+* Created by: Joseph Nilles 11/21/20
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Table of contents
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> * [Tap Room](#tap room)
+>   * [About / Synopsis](#about--synopsis)
+>   * [Table of contents](#table-of-contents)
+>   * [Setup](#setup)
+>   * [Usage](#usage)
+>     * [Screenshots](#screenshots)
+>     * [Features](#features)
+>   * [Code](#code)
+>     * [Bugs](#bugs)
+>     * [To Do](#to-do)
+>   * [Resources (Documentation and other links)](#resources-documentation-and-other-links)
+>   * [Contact](#contact)
+>   * [License](#license)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Clone the project from the repository at https://github.com/jbnilles/tap-room
+* Navigate inside the project folder called tap-room
+* Open at that location
+* In the terminal run the command `npm install`
+* Then run the command `npm start` in the terminal
+* Open a web browser and go to http://localhost:3000/ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
+* While using this app you can create kegs and give each one a name, brand, price and percent alcohol. Each keg will automatically be given a quantity of 124 pints. Once a keg is created you may then view the details of each keb buy clicking on it in the list. This will bring up the keg details page. From there you will have the option to edit, delete or buy a pint. The edit gives the same options as create but it includes the quantity, delete removes the keb from the list. Buy will reduce the keg quantity by 1. And there is also a return to the keg list button that just take you back to the list page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Screenshots
+<img src="./tapRoomDesign.png" width="500px">
+<p>This is the structure of the React Components</p>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Features
+* Add/Edit/Delete/View Kegs
+* Buy a pint from a Keg
 
-### Analyzing the Bundle Size
+## Code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Bugs
 
-### Making a Progressive Web App
+* No known bugs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### To Do
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+- [x] list/menu of all available kegs
+- [x] form to add a new keg to a list.
+- [x] click on a keg to see its detail page.
+- [x] display how many pints are left in a keg. 
+- [x] click a button next to a keg to decrease the number of pints left by 1. Pints should not be able to go below 0.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [x] edit a keg's properties after entering them just in case I make a mistake.
+- [x] delete a keg.
+- [x] say "Out of Stock" once it's empty.
+- [x] less than 10 pints to include a message that says "Almost Empty" 
+- [ ] have kegs prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of pints left.
+- [ ] application to be nicely styled. (Use stylesheets and CSS objects!)
 
-### `npm run build` fails to minify
+## Resources (Documentation and other links)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* https://app.diagrams.net/ was used to create the component diagrams
+
+
+## Contact
+
+To contact author 
+  * Email Joseph Nilles at jbnilles24@gmail.com
+  * Github : github.com/jbnilles
+
+## License
+
+This project is licensed using MIT License
