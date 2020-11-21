@@ -1,6 +1,6 @@
 import React from "react";
-// import Header from "./Header";
-// import Footer from "./Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import KegController from "./KegController";
 
 function App() {
@@ -8,13 +8,13 @@ function App() {
     <React.Fragment>
       <div class="contain">
         <div id="header">
-          {/* <Header /> */}
+          <Header />
         </div>
         <div id="body">
           <KegController />
         </div>
         <div id="footer">
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     </React.Fragment>

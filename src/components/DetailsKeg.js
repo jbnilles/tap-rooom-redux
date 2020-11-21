@@ -15,7 +15,7 @@ function DetailsKeg(props){
     dif = parseInt(dif);
     props.onChangeKegQuantityClick({
       Name: keg.Name, 
-      Quantity: isSub ? (keg.Quantity === 0 ? 0 : keg.Quantity = parseInt(keg.Quantity) - dif) : keg.Quantity = parseInt(keg.Quantity) + dif, //  --keg.Quantity  ===  keg.Quantity = keg.Quantity - 1
+      Quantity: isSub ? (keg.Quantity === 0 ? 0 : keg.Quantity = parseInt(keg.Quantity) - dif) : keg.Quantity = parseInt(keg.Quantity) + dif, 
       id: keg.id});
   }
 
@@ -28,8 +28,7 @@ function DetailsKeg(props){
       <h3>Quantity: {quantity}</h3>
       <h5>Price: {keg.Price}</h5>
       <h5>Alcohol Percent: {keg.AlcoholContent}</h5>
-      <button onClick = {()=> handleChangeKegQuantityButton(keg, true, 1) }>Buy</button> {/* reduce quantity */}
-      {/*<button onClick = {()=> handleChangekegQuantityButton(keg, false, 10)  }>Stock</button>  increase quantity props.onStockClick*/}
+      <button onClick = {()=> handleChangeKegQuantityButton(keg, true, 1) }>Buy</button> 
       <button onClick = { props.onClickingEdit }>Update Keg</button>
       <button onClick = {() => onClickingDelete(keg.id) }>Close Keg</button>
       <hr/>
