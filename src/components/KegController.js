@@ -3,18 +3,20 @@ import KegList from "./KegList";
 import EditKeg from "./EditKeg";
 import CreateKeg from "./CreateKeg";
 import DetailsKeg from './DetailsKeg';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 class KegController extends React.Component{
   
-  constructor(props){
-    super(props)
-    this.state = {
-      formVisibleOnPage: false,
-      masterList: [],
-      selectedKeg: null,
-      editing: false
-    }
-  }
+  // constructor(props){
+  //   super(props)
+  //   this.state = {
+  //     formVisibleOnPage: false,
+  //     masterList: [],
+  //     selectedKeg: null,
+  //     editing: false
+  //   }
+  // }
   //event handlers
   handleEditingKegInList = (kegToEdit) => {
     const editedKegList = this.state.masterList
@@ -116,6 +118,20 @@ class KegController extends React.Component{
     );
   } 
 }
+KegController.propTypes = {
+masterList: PropTypes.array,
+selectedKeg: PropTypes.object,
+formVisibleOnPage: PropTypes.bool,
+editing: PropTypes.bool,
 
+}
+const mapStateToProps = state => {
+  return {
+    masterList: state.masterList,
+    selectedKeg: state.selectedKeg,
+    formVisibleOnPage: state.formVisibleOnPage,
+    editing: state.editing,
+  }
+}
 
 export default KegController;
