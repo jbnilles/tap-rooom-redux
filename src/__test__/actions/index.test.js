@@ -28,84 +28,42 @@ describe('Tap Room actions', () => {
       }
     );
   });
-  it('deleteItem should create DELETE_ITEM action', () => {
-    expect(actions.editKeg(keg)).toEqual(
+  it('select should create SELECT_KEG action', () => {
+    expect(actions.selectKeg({})).toEqual(
       {
-        type: 'EDIT_KEG',
-        masterList: keg.masterList,
-        editing: keg.editing,
+        type: 'SELECT_KEG',
+        selectedKeg: {},
+      }
+    );
+  });
+  it('unselect should create UN_SELECT action', () => {
+    expect(actions.unSelect(keg)).toEqual(
+      {
+        type: 'UN_SELECT',
         selectedKeg: keg.selectedKeg,
         formVisibleOnPage: keg.formVisibleOnPage,
       }
     );
   });
-  it('deleteItem should create DELETE_ITEM action', () => {
-    expect(actions.editKeg(keg)).toEqual(
+  it('start edititng  should create START_EDIT_KEG action', () => {
+    expect(actions.startEditingKeg(true)).toEqual(
       {
-        type: 'EDIT_KEG',
-        masterList: keg.masterList,
-        editing: keg.editing,
-        selectedKeg: keg.selectedKeg,
-        formVisibleOnPage: keg.formVisibleOnPage,
+        type: 'START_EDIT_KEG',
+        editing: true,       
       }
     );
   });
-  it('deleteItem should create DELETE_ITEM action', () => {
-    expect(actions.editKeg(keg)).toEqual(
+  it('showForm  should create SHOW_FORM action', () => {
+    expect(actions.showForm(true)).toEqual(
       {
-        type: 'EDIT_KEG',
-        masterList: keg.masterList,
-        editing: keg.editing,
-        selectedKeg: keg.selectedKeg,
-        formVisibleOnPage: keg.formVisibleOnPage,
+        type: 'SHOW_FORM',
+        formVisibleOnPage: true,       
       }
     );
   });
 });
 
 
-// export const addItem = (item) => {
-//   return item.masterList;
-// }
- 
 
 
-export const addKeg = (keg) => {
-  
-  return {
-    type: 'ADD_KEG',
-    masterList: keg.masterList,
-    editing: false,
-    selectedKeg: keg.selectedKeg,
-    formVisibleOnPage: keg.formVisibleOnPage,
-  }
-} 
-export const selectKeg = (keg) => {
-  
-  return {
-    type: 'SELECT_KEG',
-    selectedKeg: keg
-  }
-} 
-export const unSelect = (keg) => {
-  
-  return {
-    type: 'UN_SELECT',
-    selectedKeg: keg.selectedKeg,
-    formVisibleOnPage: keg.formVisibleOnPage,
-  }
-} 
-export const startEditingKeg = (keg) => {
-  
-  return {
-    type: 'START_EDIT_KEG',
-    editing: keg
-  }
-}
-export const showForm = (keg) => {
-  
-  return {
-    type: 'SHOW_FORM',
-    formVisibleOnPage: keg
-  }
-}
+
