@@ -9,16 +9,6 @@ import * as a from './../actions';
 
 class KegController extends React.Component{
   
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     formVisibleOnPage: false,
-  //     masterList: [],
-  //     selectedKeg: null,
-  //     editing: false
-  //   }
-  // }
-  //event handlers
   handleEditingKegInList = (kegToEdit) => {
     console.log('||||||||||',this.props)
     console.log('||||||||||',kegToEdit)
@@ -40,16 +30,20 @@ class KegController extends React.Component{
     const { dispatch } = this.props;
       const action = a.startEditingKeg(true);
       dispatch(action);
-    //this.setState({editing: true});
   }
 
   handleDeletingKeg = (id) => { 
-    const newMasterList = this.state.masterList
+    const newMasterList = this.props.masterList
       .filter(keg => keg.id !== id);
-    this.setState({
+    const { dispatch } = this.props;
+    const action = a.editKeg({
       masterList: newMasterList,
-      selectedKeg: null
+      editing: false,
+      selectedKeg: null,
+      formVisibleOnPage: false,
     });
+    dispatch(action);
+    
   }
 
   handleClick = () => {  
@@ -62,15 +56,9 @@ class KegController extends React.Component{
         formVisibleOnPage: false,
       });
       dispatch(action);
-      // this.setState({
-      //   formVisibleOnPage: false,
-      //   selectedKeg: null,
-      //   editing: false
-      // });
+      
     } else {
-      // this.setState(prevState => ({
-      //   formVisibleOnPage: !prevState.formVisibleOnPage,
-      // }));
+      
       const { dispatch } = this.props;
       const action = a.addKeg({
         masterList: this.props.masterList, 
@@ -90,7 +78,6 @@ class KegController extends React.Component{
     const { dispatch } = this.props;
     const action = a.selectKeg(selectedKeg);
     dispatch(action);
-    // this.setState({selectedKeg});
   }
 
   handleAddingNewKegToList = (newKeg) => {
@@ -120,9 +107,7 @@ class KegController extends React.Component{
     });
     console.log('iiii',action)
     dispatch(action);
-    // this.setState({
-    //   masterList: editedKegCatalog,
-    // });
+    
   }
   
   render(){
