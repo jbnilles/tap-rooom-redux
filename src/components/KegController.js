@@ -10,12 +10,9 @@ import * as a from './../actions';
 class KegController extends React.Component{
   
   handleEditingKegInList = (kegToEdit) => {
-    console.log('||||||||||',this.props)
-    console.log('||||||||||',kegToEdit)
     const editedKegList = this.props.masterList
       .filter(keg => keg.id !== this.props.selectedKeg.id)
       .concat(kegToEdit);
-      console.log(kegToEdit.Quantity)
       const { dispatch } = this.props;
     const action = a.editKeg({
       masterList: editedKegList,
@@ -48,27 +45,26 @@ class KegController extends React.Component{
 
   handleClick = () => {  
     if (this.props.selectedKeg != null) {
+      console.log('here')
       const { dispatch } = this.props;
-      const action = a.editKeg({
-        masterList: this.props.masterList,
-        editing: false,
-        selectedKeg: null,
+      const action = a.unSelect({
         formVisibleOnPage: false,
-      });
+        selectedKeg: null,
+      }
+        
+      );
+      console.log(action)
       dispatch(action);
       
     } else {
       
       const { dispatch } = this.props;
-      const action = a.addKeg({
-        masterList: this.props.masterList, 
-        editing: false,
-        selectedKeg: null,
-        formVisibleOnPage: !this.props.formVisibleOnPage,
-      });
+      const action = a.showForm(
+         !this.props.formVisibleOnPage
+      );
+      console.log(action)
       dispatch(action);
     }
-    console.log(this.props)
   }
 
   handleChangingSelectedKeg = (id) => { 
@@ -90,6 +86,7 @@ class KegController extends React.Component{
         selectedKeg: null,
         formVisibleOnPage: false,
       });
+      
       dispatch(action);
   }
 
@@ -98,14 +95,12 @@ class KegController extends React.Component{
       .filter(keg => keg.id !== this.props.selectedKeg.id)
       .concat(kegToEdit);
       const { dispatch } = this.props;
-      console.log(kegToEdit)
     const action = a.editKeg({
       masterList: editedKegCatalog,
       editing: false,
       selectedKeg: kegToEdit,
       formVisibleOnPage: false
     });
-    console.log('iiii',action)
     dispatch(action);
     
   }
@@ -113,7 +108,6 @@ class KegController extends React.Component{
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    console.log('props',this.props)
     if (this.props.editing) { 
       currentlyVisibleState = <EditKeg 
         keg = {this.props.selectedKeg} 

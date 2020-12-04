@@ -11,8 +11,6 @@ export const editKeg = (keg) => {
     editing: false,
     selectedKeg: keg.selectedKeg,
     formVisibleOnPage: keg.formVisibleOnPage,
-    
-
   }
 } 
 export const addKeg = (keg) => {
@@ -21,10 +19,8 @@ export const addKeg = (keg) => {
     type: 'ADD_KEG',
     masterList: keg.masterList,
     editing: false,
-    selectedKeg: keg.selectKeg,
+    selectedKeg: keg.selectedKeg,
     formVisibleOnPage: keg.formVisibleOnPage,
-    
-
   }
 } 
 export const selectKeg = (keg) => {
@@ -34,10 +30,25 @@ export const selectKeg = (keg) => {
     selectedKeg: keg
   }
 } 
+export const unSelect = (keg) => {
+  
+  return {
+    type: 'UN_SELECT',
+    selectedKeg: keg.selectedKeg,
+    formVisibleOnPage: keg.formVisibleOnPage,
+  }
+} 
 export const startEditingKeg = (keg) => {
   
   return {
     type: 'START_EDIT_KEG',
     editing: keg
+  }
+}
+export const showForm = (keg) => {
+  
+  return {
+    type: 'SHOW_FORM',
+    formVisibleOnPage: keg
   }
 }

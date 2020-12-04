@@ -10,11 +10,13 @@ function ReusableForm(props) {
         <input
           type='text'
           name='Name'
+          required
           defaultValue={props.Name ? props.Name : ""}
           placeholder='Enter a Name' />
           <input
           type='text'
           name='Brand'
+          required
           defaultValue={props.Brand ? props.Brand : ""}
           placeholder='Enter a Brand' />
           <input
