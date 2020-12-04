@@ -5,6 +5,7 @@ import CreateKeg from "./CreateKeg";
 import DetailsKeg from './DetailsKeg';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import * as a from './../actions';
 
 class KegController extends React.Component{
   
@@ -23,11 +24,13 @@ class KegController extends React.Component{
       .filter(keg => keg.id !== this.state.selectedKeg.id)
       .concat(kegToEdit);
       console.log(kegToEdit.Quantity)
-    this.setState({
+      const { dispatch } = this.props;
+    const action = a.editKeg({
       masterList: editedKegList,
       editing: false,
       selectedKeg: kegToEdit
     });
+    dispatch(action);
   }
   handleEditClick = () => { 
     this.setState({editing: true});
@@ -43,17 +46,34 @@ class KegController extends React.Component{
   }
 
   handleClick = () => {  
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        formVisibleOnPage: false,
+    if (this.props.selectedKeg != null) {
+      const { dispatch } = this.props;
+      const action = a.editKeg({
+        masterList: this.props.masterList,
+        editing: false,
         selectedKeg: null,
-        editing: false
+        formVisibleOnPage: false,
       });
+      dispatch(action);
+      // this.setState({
+      //   formVisibleOnPage: false,
+      //   selectedKeg: null,
+      //   editing: false
+      // });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
+      // this.setState(prevState => ({
+      //   formVisibleOnPage: !prevState.formVisibleOnPage,
+      // }));
+      const { dispatch } = this.props;
+      const action = a.editKeg({
+        masterList: this.props.masterList, 
+        editing: false,
+        selectedKeg: null,
+        formVisibleOnPage: !this.props.formVisibleOnPage,
+      });
+      dispatch(action);
     }
+    console.log(this.props)
   }
 
   handleChangingSelectedKeg = (id) => { 
@@ -65,10 +85,14 @@ class KegController extends React.Component{
   handleAddingNewKegToList = (newKeg) => {
     const newMasterList = this.state.masterList
       .concat(newKeg);
-    this.setState({
-      masterList: newMasterList,
-      formVisibleOnPage: false
-    });
+      const { dispatch } = this.props;
+      const action = a.editKeg({
+        masterList: newMasterList, 
+        editing: false,
+        selectedKeg: null,
+        formVisibleOnPage: false,
+      });
+      dispatch(action);
   }
 
   handleChangeKegQuantityClick =  (kegToEdit) => {
@@ -83,34 +107,35 @@ class KegController extends React.Component{
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.editing) { 
+    console.log('props',this.props)
+    if (this.props.editing) { 
       currentlyVisibleState = <EditKeg 
-        keg = {this.state.selectedKeg} 
+        keg = {this.props.selectedKeg} 
         onEditKeg =  {this.handleEditingKegInList}/>
       buttonText = "Return to Keg List";
-    } else if (this.state.selectedKeg !== null) { 
+    } else if (this.props.selectedKeg !== null) { 
       
       currentlyVisibleState = <DetailsKeg 
-        keg = {this.state.selectedKeg} 
+        keg = {this.props.selectedKeg} 
         onClickingDelete = {this.handleDeletingKeg} 
         onClickingEdit = {this.handleEditClick}
         onChangeKegQuantityClick = {this.handleChangeKegQuantityClick} 
         />
       buttonText = "Return to Keg List";
-    } else if (this.state.formVisibleOnPage) { 
+    } else if (this.props.formVisibleOnPage) { 
       currentlyVisibleState = <CreateKeg 
         onNewKegCreation={this.handleAddingNewKegToList} />
       buttonText = "Return to Keg List";
     } else {                                
       currentlyVisibleState = <KegList 
-        Kegs={this.state.masterList} 
+        Kegs={this.props.masterList} 
         onKegSelection={this.handleChangingSelectedKeg} />;
       buttonText = "Add Keg";
     }
     
     return (
       <React.Fragment>
-        {this.state.masterList[0] === undefined && 
+        {this.props.masterList[0] === undefined && 
           currentlyVisibleState.props.Kegs !== undefined ? "There are no kegs currently in the store" : ""}
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
@@ -133,5 +158,5 @@ const mapStateToProps = state => {
     editing: state.editing,
   }
 }
-
+  KegController = connect(mapStateToProps)(KegController);
 export default KegController;
