@@ -33,7 +33,11 @@ class KegController extends React.Component{
     dispatch(action);
   }
   handleEditClick = () => { 
-    this.setState({editing: true});
+    
+    const { dispatch } = this.props;
+      const action = a.startEditingKeg(true);
+      dispatch(action);
+    //this.setState({editing: true});
   }
 
   handleDeletingKeg = (id) => { 
@@ -65,7 +69,7 @@ class KegController extends React.Component{
       //   formVisibleOnPage: !prevState.formVisibleOnPage,
       // }));
       const { dispatch } = this.props;
-      const action = a.editKeg({
+      const action = a.addKeg({
         masterList: this.props.masterList, 
         editing: false,
         selectedKeg: null,
@@ -77,16 +81,20 @@ class KegController extends React.Component{
   }
 
   handleChangingSelectedKeg = (id) => { 
-    const selectedKeg = this.state.masterList
+    const selectedKeg = this.props.masterList
       .filter(keg => keg.id === id)[0];
-    this.setState({selectedKeg});
+
+    const { dispatch } = this.props;
+    const action = a.selectKeg(selectedKeg);
+    dispatch(action);
+    // this.setState({selectedKeg});
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newMasterList = this.state.masterList
+    const newMasterList = this.props.masterList
       .concat(newKeg);
       const { dispatch } = this.props;
-      const action = a.editKeg({
+      const action = a.addKeg({
         masterList: newMasterList, 
         editing: false,
         selectedKeg: null,
