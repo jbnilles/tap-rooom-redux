@@ -5,8 +5,8 @@ export default (state = null, action) => {
     return action.selectedKeg;
   // case 'ADD_KEG':
   //   return action.selectedKeg;
-  // case 'EDIT_KEG':
-  //   return action.selectedKeg;
+  case 'EDIT_KEG':
+    return action.selectedKeg;
   case 'SELECT_KEG':
     return action.selectedKeg;
   default:

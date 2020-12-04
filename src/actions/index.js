@@ -9,7 +9,7 @@ export const editKeg = (keg) => {
     type: 'EDIT_KEG',
     masterList: keg.masterList,
     editing: false,
-    selectedKeg: keg.kegToEdit,
+    selectedKeg: keg.selectedKeg,
     formVisibleOnPage: keg.formVisibleOnPage,
     
 
@@ -21,7 +21,7 @@ export const addKeg = (keg) => {
     type: 'ADD_KEG',
     masterList: keg.masterList,
     editing: false,
-    selectedKeg: keg.kegToEdit,
+    selectedKeg: keg.selectKeg,
     formVisibleOnPage: keg.formVisibleOnPage,
     
 

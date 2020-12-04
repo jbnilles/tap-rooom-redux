@@ -20,15 +20,18 @@ class KegController extends React.Component{
   // }
   //event handlers
   handleEditingKegInList = (kegToEdit) => {
-    const editedKegList = this.state.masterList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
+    console.log('||||||||||',this.props)
+    console.log('||||||||||',kegToEdit)
+    const editedKegList = this.props.masterList
+      .filter(keg => keg.id !== this.props.selectedKeg.id)
       .concat(kegToEdit);
       console.log(kegToEdit.Quantity)
       const { dispatch } = this.props;
     const action = a.editKeg({
       masterList: editedKegList,
       editing: false,
-      selectedKeg: kegToEdit
+      selectedKeg: kegToEdit,
+      formVisibleOnPage: false
     });
     dispatch(action);
   }
@@ -104,12 +107,22 @@ class KegController extends React.Component{
   }
 
   handleChangeKegQuantityClick =  (kegToEdit) => {
-    const editedKegCatalog = this.state.masterList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
+    const editedKegCatalog = this.props.masterList
+      .filter(keg => keg.id !== this.props.selectedKeg.id)
       .concat(kegToEdit);
-    this.setState({
+      const { dispatch } = this.props;
+      console.log(kegToEdit)
+    const action = a.editKeg({
       masterList: editedKegCatalog,
+      editing: false,
+      selectedKeg: kegToEdit,
+      formVisibleOnPage: false
     });
+    console.log('iiii',action)
+    dispatch(action);
+    // this.setState({
+    //   masterList: editedKegCatalog,
+    // });
   }
   
   render(){
