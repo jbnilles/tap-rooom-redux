@@ -1,8 +1,3 @@
-// export const addItem = (item) => {
-//   return item.masterList;
-// }
- 
-
 export const editKeg = (keg) => {
   
   return {

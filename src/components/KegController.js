@@ -45,7 +45,6 @@ class KegController extends React.Component{
 
   handleClick = () => {  
     if (this.props.selectedKeg != null) {
-      console.log('here')
       const { dispatch } = this.props;
       const action = a.unSelect({
         formVisibleOnPage: false,
@@ -53,7 +52,6 @@ class KegController extends React.Component{
       }
         
       );
-      console.log(action)
       dispatch(action);
       
     } else {
@@ -62,7 +60,6 @@ class KegController extends React.Component{
       const action = a.showForm(
          !this.props.formVisibleOnPage
       );
-      console.log(action)
       dispatch(action);
     }
   }
