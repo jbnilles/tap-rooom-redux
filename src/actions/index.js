@@ -1,7 +1,9 @@
+import * as c from './ActionTypes';
+
 export const editKeg = (keg) => {
   
   return {
-    type: 'EDIT_KEG',
+    type: c.EDIT_KEG,
     masterList: keg.masterList,
     editing: false,
     selectedKeg: keg.selectedKeg,
@@ -11,7 +13,7 @@ export const editKeg = (keg) => {
 export const addKeg = (keg) => {
   
   return {
-    type: 'ADD_KEG',
+    type: c.ADD_KEG,
     masterList: keg.masterList,
     editing: false,
     selectedKeg: keg.selectedKeg,
@@ -21,14 +23,14 @@ export const addKeg = (keg) => {
 export const selectKeg = (keg) => {
   
   return {
-    type: 'SELECT_KEG',
+    type: c.SELECT_KEG,
     selectedKeg: keg
   }
 } 
 export const unSelect = (keg) => {
   
   return {
-    type: 'UN_SELECT',
+    type: c.UN_SELECT,
     selectedKeg: keg.selectedKeg,
     formVisibleOnPage: keg.formVisibleOnPage,
   }
@@ -36,14 +38,14 @@ export const unSelect = (keg) => {
 export const startEditingKeg = (keg) => {
   
   return {
-    type: 'START_EDIT_KEG',
+    type: c.START_EDIT_KEG,
     editing: keg
   }
 }
 export const showForm = (keg) => {
   
   return {
-    type: 'SHOW_FORM',
+    type: c.SHOW_FORM,
     formVisibleOnPage: keg
   }
 }
